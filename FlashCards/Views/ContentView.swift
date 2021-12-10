@@ -21,14 +21,23 @@ struct ContentView: View {
     var body: some View {
         ScrollView{
             //Show the question
-            Text(currentCard.question)
-                .font(.largeTitle)
-                .multilineTextAlignment(.center)
+           
+                Spacer()
+                
+                Text(currentCard.question)
+                    .font(.largeTitle)
+                    .multilineTextAlignment(.center)
+                Spacer()
+            
+            
             
             //Check answer
             Button(action: {
                // Reveal the answer
-                isAnswerShowing = true
+                
+                withAnimation{
+                    isAnswerShowing = true
+                }
                 print("Button was pressed")
             }, label: {
                 Text("Check Answer")
@@ -50,7 +59,10 @@ struct ContentView: View {
             //Next question
             Button(action: {
                // get another question
-                currentCard = listOfCards.randomElement()!
+                withAnimation{
+                    currentCard = listOfCards.randomElement()!
+                }
+                
                 
                 isAnswerShowing = false
                 print("Button was pressed")
