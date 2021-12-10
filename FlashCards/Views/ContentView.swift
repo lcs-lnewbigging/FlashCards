@@ -27,7 +27,8 @@ struct ContentView: View {
             
             //Check answer
             Button(action: {
-                // NOTE: Output will not be shown unless this app is run in the "full" simulator
+               // Reveal the answer
+                isAnswerShowing = true
                 print("Button was pressed")
             }, label: {
                 Text("Check Answer")
@@ -50,6 +51,8 @@ struct ContentView: View {
             Button(action: {
                // get another question
                 currentCard = listOfCards.randomElement()!
+                
+                isAnswerShowing = false
                 print("Button was pressed")
             }, label: {
                 Text("Next Question")
