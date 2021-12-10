@@ -9,13 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ScrollView{
+            //Show the question
+            Text("Wht's the \"powerhouse\" of a cell?")
+                .font(.largeTitle)
+                .multilineTextAlignment(.center)
+            
+            //Check answer
+            Button(action: <#T##() -> Void#>, label: <#T##() -> _#>)
+                .buttonStyle(.bordered)
+        }
+        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+.previewInterfaceOrientation(.landscapeRight)
     }
 }
