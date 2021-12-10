@@ -14,13 +14,10 @@ struct ContentView: View {
     //It is randomly selected for the list of cards
    @State var currentCard = listOfCards.randomElement()!
     
+    // This cintrols wether the answer is visible
+    @State var isAnswerShowing = false
     
-    
-    
-    
-    
-    
-    
+    //MARK: Computed Properties
     var body: some View {
         ScrollView{
             //Show the question
@@ -36,7 +33,7 @@ struct ContentView: View {
                 Text("Check Answer")
             })
             .buttonStyle(.borderedProminent)
-            Divider()
+        
                 
             
             //Show the answer
@@ -45,6 +42,7 @@ struct ContentView: View {
                 .font(.title3)
                 .italic()
                 .multilineTextAlignment(.center)
+                .opacity(isAnswerShowing ? 1.0 : 0.0)
                 .padding(10)
             
             
@@ -57,6 +55,7 @@ struct ContentView: View {
                 Text("Next Question")
             })
             .buttonStyle(.borderedProminent)
+            .opacity(isAnswerShowing ? 1.0 : 0.0)
         
         
         }
