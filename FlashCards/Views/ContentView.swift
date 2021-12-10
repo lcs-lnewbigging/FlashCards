@@ -11,13 +11,34 @@ struct ContentView: View {
     var body: some View {
         ScrollView{
             //Show the question
-            Text("Wht's the \"powerhouse\" of a cell?")
+            Text("What's the \"powerhouse\" of a cell?")
                 .font(.largeTitle)
                 .multilineTextAlignment(.center)
             
             //Check answer
-            Button(action: <#T##() -> Void#>, label: <#T##() -> _#>)
-                .buttonStyle(.bordered)
+            Button(action: {
+                // NOTE: Output will not be shown unless this app is run in the "full" simulator
+                print("Button was pressed")
+            }, label: {
+                Text("Check")
+            })
+            .buttonStyle(.borderedProminent)
+            
+            //Show the question
+            Text("Mitochondria")
+                .font(.title3)
+                .multilineTextAlignment(.center)
+            
+            //Check answer
+            Button(action: {
+                // NOTE: Output will not be shown unless this app is run in the "full" simulator
+                print("Button was pressed")
+            }, label: {
+                Text("Next Question")
+            })
+            .buttonStyle(.borderedProminent)
+        
+        
         }
         .padding()
     }
